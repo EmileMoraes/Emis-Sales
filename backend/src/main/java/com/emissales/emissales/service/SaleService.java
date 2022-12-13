@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.Instant;
 import java.time.LocalDate;
@@ -32,5 +33,18 @@ public class SaleService {
         LocalDate max = maxDate.equals("") ? today : LocalDate.parse(maxDate);
 
         return repository.findSalesByDate(min, max, pageable);
+    }
+
+    @Transactional
+    public List<Sale> findAll() {
+        return repository.findAll();
+    }
+
+    @Transactional
+    public Sale salve(Sale sale) {
+        LocalDate today = LocalDate.ofInstant(Instant.now(), ZoneId.systemDefault());
+
+        sale.setDate(today);
+        return repository.save(sale);
     }
 }
