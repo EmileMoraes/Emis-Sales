@@ -1,7 +1,7 @@
 # Emis-Sales
 
 
-This is an API for sampling sales from a store and the most incredible thing is the ability to send SMS to the cell phones of registered sellers, in addition to being accessible for specific periods.
+This is an API for sampling sales from a store and the most incredible thing is the ability to send SMS to the cell phones of registered sellers, in addition to being accessible for specific periods
 
 ## 🛠️ Tools
 
